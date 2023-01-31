@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Link from "next/link";
-import { getPostsAndPortfolio } from '../lib/data';
+import { getPortfolioItems, getPortfolioItem } from '../../lib/data';
 
 export const getStaticProps = async () => {
-  const data = await getPostsAndPortfolio();
+  const portfolioItem = await getPortfolioItems(params.slug));
   return {
     props: {
-      data
+      portfolioItems: data,
     },
   };
 };
