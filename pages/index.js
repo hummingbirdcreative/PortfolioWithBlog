@@ -12,6 +12,7 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ data }) {
+  console.log(data);
 
   return (
     <div>
@@ -34,16 +35,12 @@ export default function Home({ data }) {
       <div className='mt-10'>
         {data?.posts?.map((post) => (
           <div key={post.slug}>
-            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+            <Link href={`/blog/${post.slug}`}>
+              <a>{post.title}</a>
+            </Link>
           </div>
         ))}
       </div>
-
-        <h1>
-         welcome
-        </h1>
-
-      
     </div>
-  )
+  );
 }
